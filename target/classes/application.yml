@@ -1,0 +1,12 @@
+server:
+  port: 8018
+spring:
+  application:
+    name: swag-music
+
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://swag-discovery:8703/eureka/
+      #defaultZone: http://localhost:8703/eureka/

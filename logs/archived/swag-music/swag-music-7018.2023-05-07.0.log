@@ -1,0 +1,17 @@
+2023-05-07 15:43:14.889-0400 [main]  INFO [swag-music,,] 1331 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 15:43:16.742-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=ef9c1c1d-ec91-3634-b3a3-0a0cfa6adb79
+2023-05-07 15:43:18.040-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-07 15:43:18.056-0400 [main]  INFO [swag-music,,] 1331 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 15:43:18.057-0400 [main]  INFO [swag-music,,] 1331 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 15:43:18.192-0400 [main]  INFO [swag-music,,] 1331 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 15:43:18.192-0400 [main]  INFO [swag-music,,] 1331 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3272 ms
+2023-05-07 15:43:19.432-0400 [pool-1-thread-1]  WARN [swag-music,,] 1331 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
+2023-05-07 15:43:22.604-0400 [main]  INFO [swag-music,,] 1331 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 15:43:23.040-0400 [main]  WARN [swag-music,,] 1331 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 15:43:23.203-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 15:43:23.398-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-07 15:43:23.442-0400 [main]  INFO [swag-music,,] 1331 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 13.693 seconds (JVM running for 15.746)
+2023-05-07 15:43:23.820-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 15:43:23.820-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.s.web.servlet.DispatcherServlet       ] : Initializing Servlet 'dispatcherServlet'
+2023-05-07 15:43:23.824-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.s.web.servlet.DispatcherServlet       ] : Completed initialization in 4 ms
+2023-05-07 15:45:08.961-0400 [Thread-3]  INFO [swag-music,,] 1331 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown

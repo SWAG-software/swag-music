@@ -1,17 +1,804 @@
-2023-05-07 15:43:14.889-0400 [main]  INFO [swag-music,,] 1331 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
-2023-05-07 15:43:16.742-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=ef9c1c1d-ec91-3634-b3a3-0a0cfa6adb79
-2023-05-07 15:43:18.040-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
-2023-05-07 15:43:18.056-0400 [main]  INFO [swag-music,,] 1331 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
-2023-05-07 15:43:18.057-0400 [main]  INFO [swag-music,,] 1331 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
-2023-05-07 15:43:18.192-0400 [main]  INFO [swag-music,,] 1331 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
-2023-05-07 15:43:18.192-0400 [main]  INFO [swag-music,,] 1331 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3272 ms
-2023-05-07 15:43:19.432-0400 [pool-1-thread-1]  WARN [swag-music,,] 1331 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
-2023-05-07 15:43:22.604-0400 [main]  INFO [swag-music,,] 1331 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
-2023-05-07 15:43:23.040-0400 [main]  WARN [swag-music,,] 1331 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2023-05-07 15:43:23.203-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-05-07 15:43:23.398-0400 [main]  INFO [swag-music,,] 1331 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
-2023-05-07 15:43:23.442-0400 [main]  INFO [swag-music,,] 1331 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 13.693 seconds (JVM running for 15.746)
-2023-05-07 15:43:23.820-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-07 15:43:23.820-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.s.web.servlet.DispatcherServlet       ] : Initializing Servlet 'dispatcherServlet'
-2023-05-07 15:43:23.824-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 1331 --- [o.s.web.servlet.DispatcherServlet       ] : Completed initialization in 4 ms
-2023-05-07 15:45:08.961-0400 [Thread-3]  INFO [swag-music,,] 1331 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 00:04:15.290-0400 [main]  INFO [swag-music,,] 432699 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 00:04:17.235-0400 [main]  INFO [swag-music,,] 432699 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 00:04:18.569-0400 [main]  INFO [swag-music,,] 432699 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 00:04:18.583-0400 [main]  INFO [swag-music,,] 432699 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 00:04:18.583-0400 [main]  INFO [swag-music,,] 432699 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 00:04:18.749-0400 [main]  INFO [swag-music,,] 432699 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 00:04:18.750-0400 [main]  INFO [swag-music,,] 432699 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3409 ms
+2023-05-08 00:04:19.699-0400 [pool-1-thread-1]  WARN [swag-music,,] 432699 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 00:04:22.713-0400 [main]  INFO [swag-music,,] 432699 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 00:04:23.233-0400 [main]  WARN [swag-music,,] 432699 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 00:04:23.374-0400 [main]  INFO [swag-music,,] 432699 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 00:04:23.469-0400 [main]  INFO [swag-music,,] 432699 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 00:04:23.538-0400 [main]  INFO [swag-music,,] 432699 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 15.388 seconds (JVM running for 16.829)
+2023-05-08 00:16:04.158-0400 [Thread-3]  INFO [swag-music,,] 432699 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 00:16:19.171-0400 [main]  INFO [swag-music,,] 443548 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 00:16:21.141-0400 [main]  INFO [swag-music,,] 443548 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 00:16:22.560-0400 [main]  INFO [swag-music,,] 443548 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 00:16:22.575-0400 [main]  INFO [swag-music,,] 443548 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 00:16:22.576-0400 [main]  INFO [swag-music,,] 443548 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 00:16:22.763-0400 [main]  INFO [swag-music,,] 443548 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 00:16:22.763-0400 [main]  INFO [swag-music,,] 443548 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3548 ms
+2023-05-08 00:16:23.790-0400 [pool-1-thread-1]  WARN [swag-music,,] 443548 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 00:16:26.478-0400 [main]  INFO [swag-music,,] 443548 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 00:16:27.051-0400 [main]  WARN [swag-music,,] 443548 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 00:16:27.177-0400 [main]  INFO [swag-music,,] 443548 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 00:16:27.272-0400 [main]  INFO [swag-music,,] 443548 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 00:16:27.337-0400 [main]  INFO [swag-music,,] 443548 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 13.653 seconds (JVM running for 15.343)
+2023-05-08 00:16:40.993-0400 [Thread-3]  INFO [swag-music,,] 443548 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 00:16:57.281-0400 [main]  INFO [swag-music,,] 444180 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 00:16:58.932-0400 [main]  INFO [swag-music,,] 444180 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 00:17:00.070-0400 [main]  INFO [swag-music,,] 444180 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 00:17:00.085-0400 [main]  INFO [swag-music,,] 444180 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 00:17:00.085-0400 [main]  INFO [swag-music,,] 444180 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 00:17:00.204-0400 [main]  INFO [swag-music,,] 444180 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 00:17:00.204-0400 [main]  INFO [swag-music,,] 444180 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 2901 ms
+2023-05-08 00:17:01.066-0400 [pool-1-thread-1]  WARN [swag-music,,] 444180 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 00:17:04.304-0400 [main]  INFO [swag-music,,] 444180 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 00:17:04.827-0400 [main]  WARN [swag-music,,] 444180 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 00:17:04.946-0400 [main]  INFO [swag-music,,] 444180 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 00:17:05.025-0400 [main]  INFO [swag-music,,] 444180 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 00:17:05.093-0400 [main]  INFO [swag-music,,] 444180 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 12.906 seconds (JVM running for 14.069)
+2023-05-08 00:17:40.395-0400 [Thread-3]  INFO [swag-music,,] 444180 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 11:01:51.659-0400 [main]  INFO [swag-music,,] 12607 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 11:01:53.895-0400 [main]  INFO [swag-music,,] 12607 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 11:01:55.403-0400 [main]  INFO [swag-music,,] 12607 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 11:01:55.448-0400 [main]  INFO [swag-music,,] 12607 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 11:01:55.450-0400 [main]  INFO [swag-music,,] 12607 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 11:01:55.872-0400 [main]  INFO [swag-music,,] 12607 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 11:01:55.873-0400 [main]  INFO [swag-music,,] 12607 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 4159 ms
+2023-05-08 11:01:57.182-0400 [pool-1-thread-1]  WARN [swag-music,,] 12607 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 11:02:00.999-0400 [main]  INFO [swag-music,,] 12607 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 11:02:01.607-0400 [main]  WARN [swag-music,,] 12607 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 11:02:01.748-0400 [main]  INFO [swag-music,,] 12607 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 11:02:01.856-0400 [main]  INFO [swag-music,,] 12607 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 11:02:01.915-0400 [main]  INFO [swag-music,,] 12607 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 21.17 seconds (JVM running for 22.493)
+2023-05-08 11:02:13.411-0400 [Thread-3]  INFO [swag-music,,] 12607 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 11:10:51.906-0400 [main]  INFO [swag-music,,] 17196 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 11:10:53.125-0400 [main]  INFO [swag-music,,] 17196 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 11:10:53.819-0400 [main]  INFO [swag-music,,] 17196 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 11:10:53.834-0400 [main]  INFO [swag-music,,] 17196 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 11:10:53.835-0400 [main]  INFO [swag-music,,] 17196 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 11:10:53.929-0400 [main]  INFO [swag-music,,] 17196 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 11:10:53.930-0400 [main]  INFO [swag-music,,] 17196 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 1991 ms
+2023-05-08 11:10:54.644-0400 [pool-1-thread-1]  WARN [swag-music,,] 17196 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 11:10:56.522-0400 [main]  INFO [swag-music,,] 17196 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 11:10:56.852-0400 [main]  WARN [swag-music,,] 17196 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 11:10:56.969-0400 [main]  INFO [swag-music,,] 17196 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 11:10:57.049-0400 [main]  INFO [swag-music,,] 17196 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 11:10:57.217-0400 [main]  INFO [swag-music,,] 17196 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 9.307 seconds (JVM running for 9.886)
+2023-05-08 11:13:50.804-0400 [Thread-3]  INFO [swag-music,,] 17196 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 11:43:00.857-0400 [main]  INFO [swag-music,,] 32340 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 11:43:02.542-0400 [main]  INFO [swag-music,,] 32340 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 11:43:04.072-0400 [main]  INFO [swag-music,,] 32340 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 11:43:04.089-0400 [main]  INFO [swag-music,,] 32340 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 11:43:04.090-0400 [main]  INFO [swag-music,,] 32340 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 11:43:04.239-0400 [main]  INFO [swag-music,,] 32340 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 11:43:04.239-0400 [main]  INFO [swag-music,,] 32340 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3345 ms
+2023-05-08 11:43:05.205-0400 [pool-1-thread-1]  WARN [swag-music,,] 32340 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 11:43:08.615-0400 [main]  INFO [swag-music,,] 32340 --- [o.s.cloud.commons.util.InetUtils        ] : Cannot determine local hostname
+2023-05-08 11:43:08.640-0400 [main]  INFO [swag-music,,] 32340 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 11:43:09.075-0400 [main]  WARN [swag-music,,] 32340 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 11:43:09.201-0400 [main]  INFO [swag-music,,] 32340 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 11:43:09.282-0400 [main]  INFO [swag-music,,] 32340 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 11:43:09.776-0400 [main]  INFO [swag-music,,] 32340 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 29.222 seconds (JVM running for 30.634)
+2023-05-08 11:53:10.718-0400 [Thread-3]  INFO [swag-music,,] 32340 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:29:42.975-0400 [main]  INFO [swag-music,,] 49535 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 13:29:46.468-0400 [main]  INFO [swag-music,,] 49535 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 13:29:48.718-0400 [main]  INFO [swag-music,,] 49535 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 13:29:48.774-0400 [main]  INFO [swag-music,,] 49535 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 13:29:48.777-0400 [main]  INFO [swag-music,,] 49535 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 13:29:49.018-0400 [main]  INFO [swag-music,,] 49535 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 13:29:49.019-0400 [main]  INFO [swag-music,,] 49535 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 5984 ms
+2023-05-08 13:29:50.332-0400 [pool-1-thread-1]  WARN [swag-music,,] 49535 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:29:54.263-0400 [main]  INFO [swag-music,,] 49648 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 13:29:55.330-0400 [main]  INFO [swag-music,,] 49535 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:29:56.831-0400 [main]  WARN [swag-music,,] 49535 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:29:57.503-0400 [main]  INFO [swag-music,,] 49535 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:29:57.702-0400 [main]  INFO [swag-music,,] 49535 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 13:29:58.453-0400 [main]  INFO [swag-music,,] 49535 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 32.757 seconds (JVM running for 34.2)
+2023-05-08 13:29:59.427-0400 [main]  INFO [swag-music,,] 49648 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 13:30:01.551-0400 [main]  INFO [swag-music,,] 49648 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 13:30:01.567-0400 [main]  INFO [swag-music,,] 49648 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 13:30:01.567-0400 [main]  INFO [swag-music,,] 49648 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 13:30:01.752-0400 [main]  INFO [swag-music,,] 49648 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 13:30:01.752-0400 [main]  INFO [swag-music,,] 49648 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 7293 ms
+2023-05-08 13:30:02.929-0400 [pool-1-thread-1]  WARN [swag-music,,] 49648 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:30:07.739-0400 [main]  INFO [swag-music,,] 49648 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:30:08.525-0400 [main]  WARN [swag-music,,] 49648 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:30:08.735-0400 [main]  INFO [swag-music,,] 49648 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:30:08.892-0400 [main]  WARN [swag-music,,] 49648 --- [ConfigServletWebServerApplicationContext] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 7018 is already in use
+2023-05-08 13:30:09.913-0400 [main]  WARN [swag-music,,] 49648 --- [z.r.AsyncReporter$BoundedAsyncReporter  ] : Timed out waiting for in-flight spans to send
+2023-05-08 13:30:09.918-0400 [main]  INFO [swag-music,,] 49648 --- [o.apache.catalina.core.StandardService  ] : Stopping service [Tomcat]
+2023-05-08 13:30:09.960-0400 [main]  INFO [swag-music,,] 49648 --- [ConditionEvaluationReportLoggingListener] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-08 13:30:09.989-0400 [main] ERROR [swag-music,,] 49648 --- [o.s.b.d.LoggingFailureAnalysisReporter  ] : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 7018 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 7018 or configure this application to listen on another port.
+
+2023-05-08 13:30:09.991-0400 [Thread-3]  INFO [swag-music,,] 49648 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:31:55.658-0400 [Thread-3]  INFO [swag-music,,] 49535 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:32:11.450-0400 [main]  INFO [swag-music,,] 50719 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 13:32:14.460-0400 [main]  INFO [swag-music,,] 50719 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 13:32:16.258-0400 [main]  INFO [swag-music,,] 50719 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 13:32:16.278-0400 [main]  INFO [swag-music,,] 50719 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 13:32:16.278-0400 [main]  INFO [swag-music,,] 50719 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 13:32:16.508-0400 [main]  INFO [swag-music,,] 50719 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 13:32:16.509-0400 [main]  INFO [swag-music,,] 50719 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 5024 ms
+2023-05-08 13:32:17.729-0400 [main]  WARN [swag-music,,] 50719 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:32:17.785-0400 [main]  WARN [swag-music,,] 50719 --- [ConfigServletWebServerApplicationContext] : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2023-05-08 13:32:42.823-0400 [main]  INFO [swag-music,,] 51134 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-08 13:32:45.030-0400 [main]  INFO [swag-music,,] 51134 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-08 13:32:46.448-0400 [main]  INFO [swag-music,,] 51134 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 7018 (http)
+2023-05-08 13:32:46.477-0400 [main]  INFO [swag-music,,] 51134 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-08 13:32:46.478-0400 [main]  INFO [swag-music,,] 51134 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-08 13:32:46.619-0400 [main]  INFO [swag-music,,] 51134 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-08 13:32:46.620-0400 [main]  INFO [swag-music,,] 51134 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3767 ms
+2023-05-08 13:32:47.846-0400 [pool-1-thread-1]  WARN [swag-music,,] 51134 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:32:51.029-0400 [main]  INFO [swag-music,,] 51134 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:32:51.607-0400 [main]  WARN [swag-music,,] 51134 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:32:51.788-0400 [main]  INFO [swag-music,,] 51134 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:32:51.963-0400 [main]  INFO [swag-music,,] 51134 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 7018 (http) with context path ''
+2023-05-08 13:32:52.047-0400 [main]  INFO [swag-music,,] 51134 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 21.961 seconds (JVM running for 23.321)
+2023-05-08 13:33:12.698-0400 [Thread-3]  INFO [swag-music,,] 51134 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:33:56.461-0400 [main]  INFO [swag-music,,] 51750 --- [c.e.swagmusic.SwagMusicApplicationTests ] : The following 1 profile is active: "test"
+2023-05-08 13:33:58.407-0400 [main]  INFO [swag-music,,] 51750 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d01676db-4244-39d1-a5f8-91a3101b8d3d
+2023-05-08 13:34:03.716-0400 [main]  INFO [swag-music,,] 51750 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:34:03.989-0400 [pool-1-thread-1]  WARN [swag-music,,] 51750 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:34:04.837-0400 [main]  WARN [swag-music,,] 51750 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:34:05.084-0400 [main]  INFO [swag-music,,] 51750 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:34:05.217-0400 [main]  INFO [swag-music,,] 51750 --- [c.e.swagmusic.SwagMusicApplicationTests ] : Started SwagMusicApplicationTests in 27.355 seconds (JVM running for 29.121)
+2023-05-08 13:34:06.000-0400 [Thread-4]  INFO [swag-music,,] 51750 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:34:06.019-0400 [Thread-4]  WARN [swag-music,,] 51750 --- [z.r.AsyncReporter$BoundedAsyncReporter  ] : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-05-08 13:40:50.472-0400 [main]  INFO [swag-music,,] 61588 --- [c.e.swagmusic.SwagMusicApplicationTests ] : The following 1 profile is active: "test"
+2023-05-08 13:40:52.050-0400 [main]  INFO [swag-music,,] 61588 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d01676db-4244-39d1-a5f8-91a3101b8d3d
+2023-05-08 13:40:56.096-0400 [main]  INFO [swag-music,,] 61588 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:40:56.316-0400 [pool-1-thread-1]  WARN [swag-music,,] 61588 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:40:56.943-0400 [main]  WARN [swag-music,,] 61588 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:40:57.159-0400 [main]  INFO [swag-music,,] 61588 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:40:57.271-0400 [main]  INFO [swag-music,,] 61588 --- [c.e.swagmusic.SwagMusicApplicationTests ] : Started SwagMusicApplicationTests in 12.911 seconds (JVM running for 14.659)
+2023-05-08 13:40:57.801-0400 [Thread-4]  INFO [swag-music,,] 61588 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:43:29.771-0400 [main]  INFO [swag-music,,] 63604 --- [c.e.swagmusic.SwagMusicApplicationTests ] : The following 1 profile is active: "test"
+2023-05-08 13:43:31.720-0400 [main]  INFO [swag-music,,] 63604 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d01676db-4244-39d1-a5f8-91a3101b8d3d
+2023-05-08 13:43:36.586-0400 [main]  INFO [swag-music,,] 63604 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:43:36.819-0400 [pool-1-thread-1]  WARN [swag-music,,] 63604 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:43:37.790-0400 [main]  WARN [swag-music,,] 63604 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:43:38.114-0400 [main]  INFO [swag-music,,] 63604 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:43:38.279-0400 [main]  INFO [swag-music,,] 63604 --- [c.e.swagmusic.SwagMusicApplicationTests ] : Started SwagMusicApplicationTests in 26.915 seconds (JVM running for 28.569)
+2023-05-08 13:43:39.301-0400 [Thread-4]  INFO [swag-music,,] 63604 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:43:39.337-0400 [Thread-4]  WARN [swag-music,,] 63604 --- [z.r.AsyncReporter$BoundedAsyncReporter  ] : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2023-05-08 13:43:39.352-0400 [Thread-4]  WARN [swag-music,,] 63604 --- [z.r.AsyncReporter$BoundedAsyncReporter  ] : Dropped 0 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:67)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:666)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:51)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.lambda$new$0(RestTemplateSender.java:44)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender.post(HttpSender.java:137)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:150)
+	at org.springframework.cloud.sleuth.zipkin2.HttpSender$HttpPostCall.doExecute(HttpSender.java:140)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$1.run(ZipkinAutoConfiguration.java:140)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.Socket.connect(Socket.java:615)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:507)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:602)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:275)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:374)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:395)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1258)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1192)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1086)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1020)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 11 common frames omitted
+
+2023-05-08 13:54:28.898-0400 [main]  INFO [swag-music,,] 69347 --- [c.e.swagmusic.SwagMusicApplicationTests ] : The following 1 profile is active: "test"
+2023-05-08 13:54:30.673-0400 [main]  INFO [swag-music,,] 69347 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=650eaff4-6af9-3f89-802a-3b5801f895cf
+2023-05-08 13:54:35.465-0400 [main]  INFO [swag-music,,] 69347 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-08 13:54:35.727-0400 [pool-1-thread-1]  WARN [swag-music,,] 69347 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-08 13:54:36.658-0400 [main]  WARN [swag-music,,] 69347 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-08 13:54:36.848-0400 [main]  INFO [swag-music,,] 69347 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-08 13:54:36.964-0400 [main]  INFO [swag-music,,] 69347 --- [o.s.c.n.eureka.InstanceInfoFactory      ] : Setting initial instance status as: STARTING
+2023-05-08 13:54:37.059-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Initializing Eureka in region us-east-1
+2023-05-08 13:54:37.068-0400 [main]  INFO [swag-music,,] 69347 --- [c.n.d.s.r.aws.ConfigClusterResolver     ] : Resolving eureka endpoints via configuration
+2023-05-08 13:54:37.107-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Disable delta property : false
+2023-05-08 13:54:37.108-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Single vip registry refresh property : null
+2023-05-08 13:54:37.108-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Force full registry fetch : false
+2023-05-08 13:54:37.108-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Application is null : false
+2023-05-08 13:54:37.108-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Registered Applications size is zero : true
+2023-05-08 13:54:37.108-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Application version is -1: true
+2023-05-08 13:54:37.109-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Getting all instance registry info from the eureka server
+2023-05-08 13:54:37.429-0400 [main]  INFO [swag-music,,] 69347 --- [c.n.d.s.t.d.RedirectingEurekaHttpClient ] : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://swag-discovery:8703/eureka/}, exception=I/O error on GET request for "http://swag-discovery:8703/eureka/apps/": swag-discovery: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: swag-discovery: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://swag-discovery:8703/eureka/apps/": swag-discovery: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: swag-discovery: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$4515e9d3.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:937)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.UnknownHostException: swag-discovery: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1534)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1524)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1382)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 134 more
+
+2023-05-08 13:54:37.430-0400 [main]  WARN [swag-music,,] 69347 --- [c.n.d.s.t.d.RetryableEurekaHttpClient   ] : Request execution failed with message: I/O error on GET request for "http://swag-discovery:8703/eureka/apps/": swag-discovery: Temporary failure in name resolution; nested exception is java.net.UnknownHostException: swag-discovery: Temporary failure in name resolution
+2023-05-08 13:54:37.432-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:441)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:283)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:279)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:66)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:295)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:376)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:127)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$EnhancerBySpringCGLIB$$4515e9d3.getEurekaClient(<generated>)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:54)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:38)
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:83)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:937)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+2023-05-08 13:54:37.433-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Initial registry fetch from primary servers failed
+2023-05-08 13:54:37.434-0400 [main]  WARN [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Using default backup registry implementation which does not do anything.
+2023-05-08 13:54:37.434-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Initial registry fetch from backup servers failed
+2023-05-08 13:54:37.444-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Starting heartbeat executor: renew interval is: 30
+2023-05-08 13:54:37.483-0400 [main]  INFO [swag-music,,] 69347 --- [c.n.discovery.InstanceInfoReplicator    ] : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-05-08 13:54:37.521-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Discovery Client initialized at timestamp 1683568477512 with initial instances count: 0
+2023-05-08 13:54:37.542-0400 [main]  INFO [swag-music,,] 69347 --- [o.s.c.n.e.s.EurekaServiceRegistry       ] : Registering application SWAG-MUSIC with eureka with status UP
+2023-05-08 13:54:37.544-0400 [main]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Saw local status change event StatusChangeEvent [timestamp=1683568477544, current=UP, previous=STARTING]
+2023-05-08 13:54:37.546-0400 [DiscoveryClient-InstanceInfoReplicator-0]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018: registering service...
+2023-05-08 13:54:37.661-0400 [DiscoveryClient-InstanceInfoReplicator-0]  INFO [swag-music,,] 69347 --- [c.n.d.s.t.d.RedirectingEurekaHttpClient ] : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://swag-discovery:8703/eureka/}, exception=I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: swag-discovery
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1524)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1382)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+
+2023-05-08 13:54:37.662-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [c.n.d.s.t.d.RetryableEurekaHttpClient   ] : Request execution failed with message: I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+2023-05-08 13:54:37.665-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2023-05-08 13:54:37.666-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [c.n.discovery.InstanceInfoReplicator    ] : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2023-05-08 13:54:37.691-0400 [main]  INFO [swag-music,,] 69347 --- [c.e.swagmusic.SwagMusicApplicationTests ] : Started SwagMusicApplicationTests in 16.815 seconds (JVM running for 18.362)
+2023-05-08 13:54:39.124-0400 [Thread-4]  INFO [swag-music,,] 69347 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-08 13:54:39.158-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [o.s.c.n.e.s.EurekaServiceRegistry       ] : Unregistering application SWAG-MUSIC with eureka with status DOWN
+2023-05-08 13:54:39.158-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Saw local status change event StatusChangeEvent [timestamp=1683568479158, current=DOWN, previous=UP]
+2023-05-08 13:54:39.159-0400 [DiscoveryClient-InstanceInfoReplicator-0]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018: registering service...
+2023-05-08 13:54:39.216-0400 [DiscoveryClient-InstanceInfoReplicator-0]  INFO [swag-music,,] 69347 --- [c.n.d.s.t.d.RedirectingEurekaHttpClient ] : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://swag-discovery:8703/eureka/}, exception=I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: swag-discovery
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1524)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1382)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 22 more
+
+2023-05-08 13:54:39.220-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [c.n.d.s.t.d.RetryableEurekaHttpClient   ] : Request execution failed with message: I/O error on POST request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+2023-05-08 13:54:39.221-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2023-05-08 13:54:39.222-0400 [DiscoveryClient-InstanceInfoReplicator-0]  WARN [swag-music,,] 69347 --- [c.n.discovery.InstanceInfoReplicator    ] : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2023-05-08 13:54:40.225-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Shutting down DiscoveryClient ...
+2023-05-08 13:54:43.228-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Unregistering ...
+2023-05-08 13:54:43.235-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [c.n.d.s.t.d.RedirectingEurekaHttpClient ] : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://swag-discovery:8703/eureka/}, exception=I/O error on DELETE request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC/172.18.18.43:swag-music:7018": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC/172.18.18.43:swag-music:7018": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:791)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:717)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:608)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1077)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1023)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.UnknownHostException: swag-discovery
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1524)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1382)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1306)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:782)
+	... 39 more
+
+2023-05-08 13:54:43.235-0400 [SpringApplicationShutdownHook]  WARN [swag-music,,] 69347 --- [c.n.d.s.t.d.RetryableEurekaHttpClient   ] : Request execution failed with message: I/O error on DELETE request for "http://swag-discovery:8703/eureka/apps/SWAG-MUSIC/172.18.18.43:swag-music:7018": swag-discovery; nested exception is java.net.UnknownHostException: swag-discovery
+2023-05-08 13:54:43.235-0400 [SpringApplicationShutdownHook] ERROR [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : DiscoveryClient_SWAG-MUSIC/172.18.18.43:swag-music:7018 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:197)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:190)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:213)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1163)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1077)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1023)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2023-05-08 13:54:43.252-0400 [SpringApplicationShutdownHook]  INFO [swag-music,,] 69347 --- [com.netflix.discovery.DiscoveryClient   ] : Completed shut down of DiscoveryClient

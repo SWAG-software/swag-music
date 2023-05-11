@@ -1,0 +1,232 @@
+2023-05-07 00:08:47.241-0400 [main]  INFO [swag-music,,] 3142 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 00:08:47.444-0400 [main]  INFO [swag-music,,] 3142 --- [c.c.c.ConfigServicePropertySourceLocator] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2023-05-07 00:08:47.445-0400 [main]  WARN [swag-music,,] 3142 --- [c.c.c.ConfigServicePropertySourceLocator] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/swag-music/test": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2023-05-07 00:08:47.449-0400 [main]  INFO [swag-music,,] 3142 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 00:08:49.852-0400 [main]  INFO [swag-music,,] 3142 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=158b79ac-db36-3536-993f-cea1038aaef8
+2023-05-07 00:08:50.943-0400 [main]  INFO [swag-music,,] 3142 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 8018 (http)
+2023-05-07 00:08:50.956-0400 [main]  INFO [swag-music,,] 3142 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 00:08:50.956-0400 [main]  INFO [swag-music,,] 3142 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 00:08:51.087-0400 [main]  INFO [swag-music,,] 3142 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 00:08:51.087-0400 [main]  INFO [swag-music,,] 3142 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 3604 ms
+2023-05-07 00:08:51.981-0400 [pool-1-thread-1]  WARN [swag-music,,] 3142 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
+2023-05-07 00:08:54.563-0400 [main]  INFO [swag-music,,] 3142 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 00:08:54.913-0400 [main]  WARN [swag-music,,] 3142 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 00:08:55.049-0400 [main]  INFO [swag-music,,] 3142 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 00:08:55.206-0400 [main]  INFO [swag-music,,] 3142 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 8018 (http) with context path ''
+2023-05-07 00:08:55.257-0400 [main]  INFO [swag-music,,] 3142 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 11.155 seconds (JVM running for 13.255)
+2023-05-07 00:08:55.945-0400 [RMI TCP Connection(4)-127.0.0.1]  INFO [swag-music,,] 3142 --- [o.s.a.r.c.CachingConnectionFactory      ] : Attempting to connect to: [localhost:5672]
+2023-05-07 00:08:55.991-0400 [RMI TCP Connection(3)-127.0.0.1]  INFO [swag-music,,] 3142 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 00:08:55.991-0400 [RMI TCP Connection(3)-127.0.0.1]  INFO [swag-music,,] 3142 --- [o.s.web.servlet.DispatcherServlet       ] : Initializing Servlet 'dispatcherServlet'
+2023-05-07 00:08:55.997-0400 [RMI TCP Connection(3)-127.0.0.1]  INFO [swag-music,,] 3142 --- [o.s.web.servlet.DispatcherServlet       ] : Completed initialization in 5 ms
+2023-05-07 00:08:56.001-0400 [RMI TCP Connection(4)-127.0.0.1]  WARN [swag-music,,] 3142 --- [o.s.b.a.amqp.RabbitHealthIndicator      ] : Rabbit health check failed
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:603)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:725)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2210)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2183)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2163)
+	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.getVersion(RabbitHealthIndicator.java:49)
+	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.doHealthCheck(RabbitHealthIndicator.java:44)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:94)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:88)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1223)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1173)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:641)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:616)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:566)
+	... 47 common frames omitted
+
+2023-05-07 00:10:31.202-0400 [Thread-3]  INFO [swag-music,,] 3142 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-07 00:11:07.617-0400 [main]  INFO [swag-music,,] 3413 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 00:11:07.755-0400 [main]  INFO [swag-music,,] 3413 --- [c.c.c.ConfigServicePropertySourceLocator] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2023-05-07 00:11:07.755-0400 [main]  WARN [swag-music,,] 3413 --- [c.c.c.ConfigServicePropertySourceLocator] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/swag-music/test": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2023-05-07 00:11:07.758-0400 [main]  INFO [swag-music,,] 3413 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 00:11:09.848-0400 [main]  INFO [swag-music,,] 3413 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=158b79ac-db36-3536-993f-cea1038aaef8
+2023-05-07 00:11:11.298-0400 [main]  INFO [swag-music,,] 3413 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 8018 (http)
+2023-05-07 00:11:11.314-0400 [main]  INFO [swag-music,,] 3413 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 00:11:11.314-0400 [main]  INFO [swag-music,,] 3413 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 00:11:12.216-0400 [main]  INFO [swag-music,,] 3413 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 00:11:12.871-0400 [main]  INFO [swag-music,,] 3413 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 5090 ms
+2023-05-07 00:11:14.967-0400 [pool-1-thread-1]  WARN [swag-music,,] 3413 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
+2023-05-07 00:11:19.224-0400 [main]  INFO [swag-music,,] 3413 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 00:11:19.722-0400 [main]  WARN [swag-music,,] 3413 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 00:11:19.918-0400 [main]  INFO [swag-music,,] 3413 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 00:11:20.120-0400 [main]  INFO [swag-music,,] 3413 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 8018 (http) with context path ''
+2023-05-07 00:11:20.161-0400 [main]  INFO [swag-music,,] 3413 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 14.486 seconds (JVM running for 16.97)
+2023-05-07 00:11:20.227-0400 [RMI TCP Connection(2)-127.0.0.1]  INFO [swag-music,,] 3413 --- [o.s.a.r.c.CachingConnectionFactory      ] : Attempting to connect to: [localhost:5672]
+2023-05-07 00:11:20.245-0400 [RMI TCP Connection(1)-127.0.0.1]  INFO [swag-music,,] 3413 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 00:11:20.245-0400 [RMI TCP Connection(1)-127.0.0.1]  INFO [swag-music,,] 3413 --- [o.s.web.servlet.DispatcherServlet       ] : Initializing Servlet 'dispatcherServlet'
+2023-05-07 00:11:20.249-0400 [RMI TCP Connection(1)-127.0.0.1]  INFO [swag-music,,] 3413 --- [o.s.web.servlet.DispatcherServlet       ] : Completed initialization in 3 ms
+2023-05-07 00:11:20.250-0400 [RMI TCP Connection(2)-127.0.0.1]  WARN [swag-music,,] 3413 --- [o.s.b.a.amqp.RabbitHealthIndicator      ] : Rabbit health check failed
+
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:603)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:725)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2210)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2183)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2163)
+	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.getVersion(RabbitHealthIndicator.java:49)
+	at org.springframework.boot.actuate.amqp.RabbitHealthIndicator.doHealthCheck(RabbitHealthIndicator.java:44)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:94)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:88)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:809)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:535)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:666)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1223)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1173)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:641)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:616)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:566)
+	... 47 common frames omitted
+
+2023-05-07 00:14:01.968-0400 [Thread-3]  INFO [swag-music,,] 3413 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-07 00:15:03.833-0400 [main]  INFO [swag-music,,] 3581 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 00:15:04.166-0400 [main]  INFO [swag-music,,] 3581 --- [c.c.c.ConfigServicePropertySourceLocator] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2023-05-07 00:15:04.166-0400 [main]  WARN [swag-music,,] 3581 --- [c.c.c.ConfigServicePropertySourceLocator] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/swag-music/test": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2023-05-07 00:15:04.168-0400 [main]  INFO [swag-music,,] 3581 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 00:15:08.074-0400 [main]  INFO [swag-music,,] 3581 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=158b79ac-db36-3536-993f-cea1038aaef8
+2023-05-07 00:15:09.848-0400 [main]  INFO [swag-music,,] 3581 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 8018 (http)
+2023-05-07 00:15:09.870-0400 [main]  INFO [swag-music,,] 3581 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 00:15:09.871-0400 [main]  INFO [swag-music,,] 3581 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 00:15:10.205-0400 [main]  INFO [swag-music,,] 3581 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 00:15:10.206-0400 [main]  INFO [swag-music,,] 3581 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 5973 ms
+2023-05-07 00:15:11.926-0400 [pool-1-thread-1]  WARN [swag-music,,] 3581 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
+2023-05-07 00:15:17.235-0400 [main]  INFO [swag-music,,] 3581 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 00:15:17.687-0400 [main]  WARN [swag-music,,] 3581 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 00:15:17.835-0400 [main]  INFO [swag-music,,] 3581 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 00:15:18.053-0400 [main]  INFO [swag-music,,] 3581 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 8018 (http) with context path ''
+2023-05-07 00:15:18.097-0400 [main]  INFO [swag-music,,] 3581 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 19.202 seconds (JVM running for 25.902)
+2023-05-07 00:15:43.844-0400 [Thread-3]  INFO [swag-music,,] 3581 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-07 15:22:51.677-0400 [main]  INFO [swag-music,,] 734 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 15:22:52.025-0400 [main]  INFO [swag-music,,] 734 --- [c.c.c.ConfigServicePropertySourceLocator] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2023-05-07 15:22:52.025-0400 [main]  WARN [swag-music,,] 734 --- [c.c.c.ConfigServicePropertySourceLocator] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/swag-music/test": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2023-05-07 15:22:52.030-0400 [main]  INFO [swag-music,,] 734 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 15:22:56.649-0400 [main]  INFO [swag-music,,] 734 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=ef9c1c1d-ec91-3634-b3a3-0a0cfa6adb79
+2023-05-07 15:22:58.796-0400 [main]  INFO [swag-music,,] 734 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 8018 (http)
+2023-05-07 15:22:58.812-0400 [main]  INFO [swag-music,,] 734 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 15:22:58.812-0400 [main]  INFO [swag-music,,] 734 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 15:22:58.940-0400 [main]  INFO [swag-music,,] 734 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 15:22:58.940-0400 [main]  INFO [swag-music,,] 734 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 6874 ms
+2023-05-07 15:23:00.513-0400 [pool-1-thread-1]  WARN [swag-music,,] 734 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused; nested exception is java.net.ConnectException: Connection refused}]
+2023-05-07 15:23:05.401-0400 [main]  INFO [swag-music,,] 734 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 15:23:06.241-0400 [main]  WARN [swag-music,,] 734 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 15:23:06.526-0400 [main]  INFO [swag-music,,] 734 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 15:23:06.897-0400 [main]  INFO [swag-music,,] 734 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 8018 (http) with context path ''
+2023-05-07 15:23:06.995-0400 [main]  INFO [swag-music,,] 734 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 21.806 seconds (JVM running for 25.788)
+2023-05-07 15:23:07.670-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 734 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-07 15:23:07.670-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 734 --- [o.s.web.servlet.DispatcherServlet       ] : Initializing Servlet 'dispatcherServlet'
+2023-05-07 15:23:07.682-0400 [RMI TCP Connection(7)-127.0.0.1]  INFO [swag-music,,] 734 --- [o.s.web.servlet.DispatcherServlet       ] : Completed initialization in 11 ms
+2023-05-07 15:24:37.074-0400 [Thread-3]  INFO [swag-music,,] 734 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Flushing remaining spans on shutdown
+2023-05-07 15:43:12.160-0400 [main]  INFO [swag-music,,] 1331 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 15:43:14.842-0400 [main]  INFO [swag-music,,] 1331 --- [c.c.c.ConfigServicePropertySourceLocator] : Located environment: name=swag-music, profiles=[test], label=null, version=ec63afad689f301ec45b82150762b8b0f08147e6, state=null
+2023-05-07 15:43:14.844-0400 [main]  INFO [swag-music,,] 1331 --- [b.c.PropertySourceBootstrapConfiguration] : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-git@github.com:SWAG-software/server-config.git/swag-music-test.yml'}, BootstrapPropertySource {name='bootstrapProperties-git@github.com:SWAG-software/server-config.git/application.yml'}]
+2023-05-07 23:57:17.648-0400 [main]  INFO [swag-music,,] 425033 --- [c.c.c.ConfigServicePropertySourceLocator] : Fetching config from server at : http://localhost:8888
+2023-05-07 23:57:17.955-0400 [main]  INFO [swag-music,,] 425033 --- [c.c.c.ConfigServicePropertySourceLocator] : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2023-05-07 23:57:17.956-0400 [main]  WARN [swag-music,,] 425033 --- [c.c.c.ConfigServicePropertySourceLocator] : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/swag-music/test": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2023-05-07 23:57:17.967-0400 [main]  INFO [swag-music,,] 425033 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : The following 1 profile is active: "test"
+2023-05-07 23:57:21.476-0400 [main]  INFO [swag-music,,] 425033 --- [o.s.cloud.context.scope.GenericScope    ] : BeanFactory id=d76241ec-64d0-30c6-8db7-411070684cc4
+2023-05-07 23:57:23.674-0400 [main]  INFO [swag-music,,] 425033 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat initialized with port(s): 8018 (http)
+2023-05-07 23:57:23.689-0400 [main]  INFO [swag-music,,] 425033 --- [o.apache.catalina.core.StandardService  ] : Starting service [Tomcat]
+2023-05-07 23:57:23.689-0400 [main]  INFO [swag-music,,] 425033 --- [org.apache.catalina.core.StandardEngine ] : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-07 23:57:23.849-0400 [main]  INFO [swag-music,,] 425033 --- [o.a.c.c.C.[Tomcat].[localhost].[/]      ] : Initializing Spring embedded WebApplicationContext
+2023-05-07 23:57:23.850-0400 [main]  INFO [swag-music,,] 425033 --- [w.s.c.ServletWebServerApplicationContext] : Root WebApplicationContext: initialization completed in 5799 ms
+2023-05-07 23:57:26.622-0400 [pool-1-thread-1]  WARN [swag-music,,] 425033 --- [o.s.c.s.a.z.ZipkinAutoConfiguration     ] : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2023-05-07 23:57:33.249-0400 [main]  INFO [swag-music,,] 425033 --- [DiscoveryClientOptionalArgsConfiguration] : Eureka HTTP Client uses RestTemplate.
+2023-05-07 23:57:34.129-0400 [main]  WARN [swag-music,,] 425033 --- [iguration$LoadBalancerCaffeineWarnLogger] : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-05-07 23:57:34.542-0400 [main]  INFO [swag-music,,] 425033 --- [o.s.b.a.e.web.EndpointLinksResolver     ] : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-07 23:57:34.781-0400 [main]  INFO [swag-music,,] 425033 --- [o.s.b.w.embedded.tomcat.TomcatWebServer ] : Tomcat started on port(s): 8018 (http) with context path ''
+2023-05-07 23:57:34.916-0400 [main]  INFO [swag-music,,] 425033 --- [c.e.swagmusic.SwagMusicApplicationKt    ] : Started SwagMusicApplicationKt in 21.012 seconds (JVM running for 22.959)
